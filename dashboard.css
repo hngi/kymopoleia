@@ -14,13 +14,51 @@
     clear: both;
 }
 
-body {
-    color: #555;
-    font-family: Open Sans;
-    font-size: 16px;
-    position: relative;
-    height: 100vh;
-    font-weight: 400;
+nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: column;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+    background: #FFFFFF;
+    padding-top: 10px;
+}
+
+.brandname {
+    margin-left: 20px;
+}
+
+.header-brandname a {
+    color: #040268;
+    font-weight: bold;
+}
+
+.redText {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+    color: #FD4720;
+
+
+}
+
+.dropdown {
+    margin: 9px 32px 0 0;
+}
+
+.dropdown-toggler {
+    margin-right: 6px;
+}
+
+.dropdown-menu.show {
+    transform: translate3d(-172px, 21px, 0px) !important;
+}
+
+.user-avatar {
+    margin-right: 20px;
+    width: 39px;
+    height: 39px;
 }
 
 .right{ 
@@ -83,6 +121,18 @@ body {
 
 .budget__expenses {
     background-color:#FD4720;
+}
+#submit{
+    width: 363px;
+    height: 54px;
+    background-color: #040268;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 5px;
+    border: none;
+    margin-top: 10px;
 }
 
 .budget__income--text,
@@ -283,3 +333,217 @@ h2 {
 .unpaid .item__percentage { box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1); }
 .unpaid:hover .item__description { font-weight: 900; }
 
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #040268;
+    font-style: normal;
+    font-weight: bold;
+    height: 100vh;
+    background: #F1F1F1;
+
+}
+
+nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: column;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+    background: #FFFFFF;
+    padding-top: 10px;
+}
+
+.brandname {
+    margin-left: 20px;
+}
+
+.header-brandname a {
+    color: #040268;
+    font-weight: bold;
+}
+
+.redText {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+    color: #FD4720;
+
+
+}
+
+.dropdown {
+    margin: 9px 32px 0 0;
+}
+
+.dropdown-toggler {
+    margin-right: 6px;
+}
+
+.dropdown-menu.show {
+    transform: translate3d(-172px, 21px, 0px) !important;
+}
+
+.user-avatar {
+    margin-right: 20px;
+    width: 39px;
+    height: 39px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.sidebar {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    height: 100vh;
+    z-index: -1;
+    padding: 20px;
+}
+
+
+.sidebar-list {
+    list-style: none;
+
+}
+
+.sidebar-list li {
+    font-size: 1rem;
+    padding: 5px
+}
+
+.sidebar-list li i {
+    color: #FD4720;
+}
+
+
+.add-budget {
+    background: #F1F1F1;
+    margin: 50px 0 0 60px;
+    text-align: center;
+}
+
+.add-budget-form {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 13px;
+    margin: 50px;
+    width: 750px;
+    padding: 20px;
+}
+
+.add-budget-form h2 {
+    padding: 15px;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    color: #FD4720;
+    font-weight: bold;
+    border-bottom: 2px solid #040268;
+    margin-bottom: 20px;
+}
+
+.form-row {
+    margin-top: 15px;
+}
+
+/* 
+hr{
+    border: 2px solid #040268;
+    transform: rotate(-0.24deg);
+    width: 686.01px;
+} */
+
+.form-control {
+    border: 1px solid #FD4720;
+    box-sizing: border-box;
+    border-radius: 11px;
+}
+
+.custom-select {
+    background: url('images/select.png') no-repeat right .75rem center/8px 10px;
+    border: 1px solid #FD4720;
+    box-sizing: border-box;
+    border-radius: 11px;
+}
+
+
+.budget-save {
+    background: #040268;
+    color: #FFFFFF;
+    width: 250px;
+    border-radius: 11px;
+}
+
+.btn:hover {
+    color: #fff;
+}
+
+.active {
+    border-bottom: 1px solid #FD4720;
+    width: max-content;
+    padding-bottom: 0 !important;
+}
+
+@media(max-width:900px) {
+    .sidebar {
+        display: none;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+
+    }
+
+    .add-budget-form {
+        display: block;
+        width: 67%;
+    }
+}
+
+
+@media(max-width:600px) {
+
+
+    .add-budget-form {
+        display: block;
+        width: 50%;
+    }
+
+}
+
+
+@media(max-width:500px) {
+
+
+    .add-budget-form {
+        display: block;
+        width: 83%;
+    }
+
+    .add-budget {
+        margin: 0
+    }
+}
+
+
+@media(max-width:375px) {
+
+    .add-budget {
+        margin: 0;
+
+    }
+
+    .add-budget-form {
+        display: block;
+        width: 70%;
+    }
+}

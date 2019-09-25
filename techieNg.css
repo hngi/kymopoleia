@@ -8,6 +8,16 @@ body{
 .container{
     width: 400px;
     margin: auto;
+    height: 700px;
+    background-color: #ffffff;
+    border-radius: 25px;
+    position: relative;
+    top: 50px;
+    padding-left: 28px;
+}
+.logincontainer{
+    width: 400px;
+    margin: auto;
     height: 510px;
     background-color: #ffffff;
     border-radius: 25px;
@@ -16,6 +26,13 @@ body{
     padding-left: 28px;
 }
 .container p{
+    color: #040268;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+}
+
+.logincontainer p{
     color: #040268;
     font-weight: bold;
     font-size: 40px;

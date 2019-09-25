@@ -1,3 +1,47 @@
+<?php
+session_start();
+function protect_value($value){
+ $secured_value = trim(stripslashes(htmlentities($value)));     
+ return $secured_value;     
+}
+$data = array();
+$error = array();
+if (isset($_POST['total_amount'])) {
+	//===CREATE BUDGET AND TOTAL AMOUNT
+	$total_amount = protect_value($total_amount);
+	$budget_name = protect_value($_POST['budget_name']);
+	if (empty($total_amount)) {
+		$error['total_amount'] = "total_amount is required";
+	}
+	if (empty($budget_name)) {
+		$error['budget_name'] = "Budget name is required";
+	}
+	if (!filter_var($_POST['total_amount'], FILTER_VALIDATE_INT)) {
+		$error['total_amount'] = "Only in integers is accepted";
+	}
+	$sql = "SELECT * FROM budget WHERE name = $budget_name AND user_id = {$_SESSION['user_id']}";
+		$result = $conn->query($sql);
+	if (mysqli_num_rows($result) > 0) {
+			$error['budget_name'] = "Budget exists with this name";
+	}
+	if (empty($error)) {
+		$insert = "INSERT INTO budget 
+					VALUES(NULL, $budget_name, $user_id, $total_amount)";
+		$exe = $conn->query($insert);
+		$data['message'] = "Budget created.";
+			
+	}
+	if ( !empty($error)) {
+        $data['success'] = false;
+        $data['errors']  = $error;
+    } else {
+		$data['success'] = true;
+	}
+	// return to ajax
+    echo json_encode($data);
+	
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +62,7 @@
 
         <nav>
             <div class="brandname">
-                <h2 class="header-brandname"><a href="#"> <span class="redText">Kymo</span>Budget</a></h2>
+                <h2 class="header-brandname"><a href="dashboard.php"> <span class="redText">Kymo</span>Budget</a></h2>
             </div>
             <img class='user-avatar' src="icons/user.png" alt="">
             <div class="dropdown">
@@ -29,7 +73,7 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="#">Action</a>
                     <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="login.php">Log Out</a>
                 </div>
             </div>
 
@@ -40,9 +84,9 @@
     <main>
 
         <section class="sidebar">
-
+            
             <ul class="sidebar-list">
-                <li><i class="fas fa-home"></i> Dashboard</li>
+                <li><a href= "dashboard.php"><i class="fas fa-home">Dashboard</i> </a></li>
                 <li  class="active"><i class="fas fa-plus-circle"></i> Add Budget Amount</li>
                 <li> <i class="fas fa-plus-circle"></i> Add Budget Items</li>
             </ul>
@@ -62,7 +106,7 @@
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <input type="text" class="form-control" placeholder="Enter start time">
+                        <input type="text" class="form-control" placeholder="Enter start time" value=%Month%>
                     </div>
                     <div class="form-group col-md-6">
                         <input type="text" class="form-control" placeholder="Enter end time">
