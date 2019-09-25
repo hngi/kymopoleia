@@ -32,19 +32,8 @@ if (isset($_POST['submit'])) {
     if (empty($_POST['password'])) {
         $error[] = 'Please Enter Your Password ';
     } else {
-        $password1 = $_POST['password'];//assign it a variable
-		$password1 = trim($password1);//removing white space from the user input 
-    }
-	if (empty($_POST['confirm_password'])) {
-        $error[] = 'Please Enter confirmed Password ';
-    } else {
-        $confirm_password = $_POST['confirm_password'];//assign it a variable
-		$c_password = trim($c_password);//removing white space from the user input 
-    }
-	if ($password1 == $confirm_password ) {
-       $password = $_POST['password']; 
-    } else {
-		$error[] = 'Confirm password didnt matche ';
+        $password = $_POST['password'];//assign it a variable
+		$password = trim($password);//removing white space from the user input 
     }
 	
     if (empty($error)) //send to Database if there's no error '
@@ -128,59 +117,30 @@ echo '<div class="errormsgbox"> <ol>';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> Budgit | Signup</title>
-    <link rel = "icon" href = "images\logo2.png" type = "image/png">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Lobster|Lobster+Two&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Budget App | sign in</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="techieNg.css">
 </head>
 <body>
     <div class="container">
-        <div class="main">
-            <header>
-                <div id="logo-div">
-                    <img src="images/logo.png" id="logo" alt=""> <span id="logo-text">BudgIt</span> 
-                    <p>Making managing your finances hassle free</p>
-                </div>
-                <div id="nav-div" class="nav-div">
-                    <p> <a href="index.php" > Home</a>
-                        <a href=""> About</a>
-                        <a href="login.php" id="login"> Login</a>
-                        <a href="signup.php" id="signup" class="active"> Signup</a>
-                        <a href=""> Contact</a>
-                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                                <img src="img/mdi_menu.png" alt="">
-                              </a>
-                    </p>
-                </div>
-            </header>
-            <div class="content">
+       <p class="blue"><span>Kymo </span> Budget<br>
+            <span>Sign up</span>
+        </p>
+        <form id="form" action="signup.php" method="POST">
+            <label class="blue">Full Name</label><br>
+            <input type="text" id="fullname" name="fullname"  required><span id="Evalid"></span><br><br>
             
-                <h1>Signup </h1>
-                <p>It only takes a minute</p>
-
-                <form id="form" action="signup.php" method="POST">
-                    <input type="text" id="fullname" name="fullname"  placeholder="Full Name" required><span id="Evalid"></span><br><br>
-                    
-                    <input type="email" id="email" name="email"  placeholder="email" required><span id="Evalid"></span><br><br>
-                   
-                    <input type="password" name="password" id="password" placeholder="password" required style="width: 230px"><i class="fa fa-eye" id="view"></i><br><br>
-                   
-                    <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm password" required onkeyup='checkPassword();'>
-                    <span id="message"></span><br><br>
-                    
-                    <button id="submit" type="submit" name="submit"  >Sign Up</button><br>
-                    <span>By clicking the Sign Up button, you agree to our</span><br>
-                    <span><a href="">Terms & Conditions</a> and <a href=""> Privacy Policy</a></span>
-                </form>
+            <label class="blue">Email</label><br>
             
-            </div>
-            <div class="clear"></div>
-            <footer>
-                <b>&copy;Copyright 2019 Kymopoleia</b>
-            </footer>
-        </div>
+            <input type="email" id="email" name="email" required><span id="Evalid"></span><br><br>
+            <label class="blue">Password</label><br>
+           
+            <input type="password" name="password" id="password" required ><br><br>
+           
+            
+            <button id="submit" type="submit" name="submit" >Create Account</button><br><br>
+            <center><span>Already have an account? <a href="login.php"> Sign in</a></span></center>
+        </form>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,64 @@
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: url('img/SigninBackground.png');
+    /* background-size: cover; */
+    max-height: 100vh;
+}
+.container{
+    width: 400px;
+    margin: auto;
+    height: 510px;
+    background-color: #ffffff;
+    border-radius: 25px;
+    position: relative;
+    top: 50px;
+    padding-left: 28px;
+}
+.container p{
+    color: #040268;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+}
+span{
+    color: #FD4720;
+    font-weight: bold;
+}
+span a{
+    text-decoration: none;
+    color: #040268;
+    font-weight: bold;
+}
+.blue{
+    color: #040268;
+}
+form{
+    margin: auto;
+    margin-top: -18px;
+}
+form input{
+    width: 350px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid #FD4720;
+    padding: 5px;
+    font-size: 18px;
+}
+label{
+    font-weight: bold;
+    line-height: 21px;
+    font-size: 18px;
+}
+#submit{
+    width: 363px;
+    height: 54px;
+    background-color: #040268;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 5px;
+    border: none;
+    margin-top: 10px;
+}

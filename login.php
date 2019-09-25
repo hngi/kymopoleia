@@ -3,7 +3,7 @@
 
 
 include ('dbcon.php');
-if (isset($_POST['submit'])) {
+if (isset($_POST['login'])) {
     // Initialize a session:
 session_start();
     $error = array();//this aaray will store all error messages
@@ -16,10 +16,8 @@ session_start();
 
         if (preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/", $_POST['email'])) {
            
-            $email = $_POST['email'];// assigning user inut to variable 
-			$email = trim($email);// removing white space from the user input 
-        } 
-		else {
+            $email = $_POST['email'];
+        } else {
              $error[] = 'Your EMail Address is invalid  ';
         }
 
@@ -30,9 +28,8 @@ session_start();
     if (empty($_POST['password'])) {
         $error[] = 'Please Enter Your Password ';
     } else {
-        $password = $_POST['password'];// assigning user inut to variable 
-		$password = trim($password);// removing white space from the user input 
-			}
+        $password = $_POST['password'];
+    }
 
 
        if (empty($error))//if the array is empty , it means no error found
@@ -57,7 +54,7 @@ session_start();
 
             $_SESSION = mysqli_fetch_array($result_check_credentials, MYSQLI_ASSOC);//Assign the result of this query to SESSION Global Variable
            
-            header("Location: budgetdb.php");
+            header("Location: budgetdashboard.php");
           
 
         }else
@@ -101,51 +98,28 @@ echo '<div class="errormsgbox"> <ol>';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>BudgIt | login</title>
-    <link rel = "icon" href = "images\logo2.png" type = "image/png">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Lobster|Lobster+Two&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Budget App | sign in</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="techieNg.css">
 </head>
 <body>
     <div class="container">
-        <div class="main">
-            <header>
-                <div id="logo-div">
-                    <img src="images/logo.png" id="logo" alt=""> <span id="logo-text">BudgIt</span> 
-                    <p>Making managing your finances hassle free</p>
-                </div>
-                <div id="nav-div" class="nav-div">
-                    <p> <a href="index.php"> Home</a>
-                        <a href=""> About</a>
-                        <a href="login.php" class="active" id="login"> Login</a>
-                        <a href="signup.php" id="signup"> Signup</a>
-                        <a href=""> Contact</a>
-                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                                <img src="img/mdi_menu.png" alt="">
-                              </a>
-                    </p>
-                </div>
-            </header>
-            <div class="content">
-                <h1>Login to Manage Your Finances</h1>
-
-                <form id="form" action="login.php" method="POST">
-                    <i class="fa fa-user" style="color: #182955"></i><input type="text" name="email" id="email"  placeholder="Email" required><span id="Evalid"></span><br><br>
-                    <i class="fa fa-lock" style="color: #182955"></i><input type="password" name="password" id="password" placeholder="password"equired><br>
-                    <span class="right" style="color: #182955">Forgot Password?</span> <br><br>
-                    <button id="submit" type="submit" name="submit" value="Login">Login</button><br>
-                    <span>Don't have an account? no problem Signup <a href="signup.php">here</a>.</span>
-                </form>
-                
-               
-            </div>
-            <div class="clear"></div>
-            <footer>
-                <b>&copy;Copyright 2019 kymopoleia</b>
-            </footer>
-        </div>
+        <p class="blue"><span>Kymo </span> Budget<br>
+            <span>Sign in</span>
+        </p>
+        <form id="form" method="POST">
+            <label class="blue">Email or Username</label><br>
+            <input type="text" id="email" name="email"  required><span id="Evalid"></span><br><br>
+            
+           
+            <label class="blue">Password</label><br>
+           
+            <input type="password" name="password" id="password" required ><br><br>
+           
+            <span><a href="">Forgot Password?</a></span><br>
+            <button id="submit" type="login" name="login">Sign In</button><br><br>
+            <center><span>New to Budget App? <a href="signup.php"> Create Account</a></span></center>
+        </form>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
