@@ -1,10 +1,10 @@
 <?php
 
 /*Define constant to connect to database */
-DEFINE('DATABASE_USER', 'root');
-DEFINE('DATABASE_PASSWORD', '');
+DEFINE('DATABASE_USER', 'id11006465_kymobudget');
+DEFINE('DATABASE_PASSWORD', 'kymobudget');
 DEFINE('DATABASE_HOST', 'localhost');
-DEFINE('DATABASE_NAME', 'BudgetAccount');
+DEFINE('DATABASE_NAME', 'id11006465_budgetaccount');
 /*Default time zone ,to be able to send mail */
 date_default_timezone_set('UTC');
 
