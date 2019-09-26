@@ -83,7 +83,7 @@
                                 </thead>
                                 <tbody>
                                     <?php do{?>
-                                        <tr>
+                                        <tr >
                                             <td><?php echo($Budgets['Budget_id']);?></td>
                                             <td><?php echo($Budgets['startTime']);?></td>
                                             <td><?php echo($Budgets['endTime']);?></td>
@@ -173,5 +173,32 @@
             </section>    
         </main>   
         <script src="dashboard.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script >
+    $(document).ready(function(){
+    $("#add-row").click(function(){
+        let rows = +($('table tbody tr.itemRows').length) + Math.floor(1000 + Math.random() * 9000);
+        let markup ="<tr class='itemRows' row='"+ rows +"'><td><input name='item[]' id='item' type='text' row='"+rows+"' class='form-control' value='' required></td><td><input name='description[]' id='description' type='text' row='"+ rows +"' class='form-control' value='' ></td><td><div class='input-group'><select name='priorities[]' class='form-control' id='priority_id' row='"+rows+"' ><?php do{ ?><option value='<?php echo ($priorities['percent']); ?>' percentage='<?php echo ($priorities['percent']); ?>'><?php echo ($priorities['priority']); ?></option> <?php }while($priorities= $result->fetch(PDO::FETCH_ASSOC))?></select></td><td><button type='button' onclick=' return deleteRow(this)' class='btn btn-danger' style='width:100%;'><i class='fa fa-trash'></i>Delete Item</button></td></tr>";
+         $("table tbody").append(markup);
+    });
+
+    $('input[name=checkbox]').change(function(){
+        if($(this).is(':checked')) {
+            let rows = +($('table tbody tr.itemRows').length) + Math.floor(1000 + Math.random() * 9000);
+            let v =$(this)[0].value;
+           
+            let markup ="<tr class='itemRows' row='"+ rows +"'><td><input name='item[]' id='item' type='text' row='"+rows+"' class='form-control' value='"+v+"' required></td><td><input name='description[]' id='description' type='text' row='"+ rows +"' class='form-control' value='' ></td><td><div class='input-group'><select name='priorities[]' class='form-control' id='priority_id' row='"+rows+"' '> <?php while($priorities= $res->fetch(PDO::FETCH_ASSOC)){?><option value='<?php echo ($priorities['percent']); ?>' percentage='<?php echo ($priorities['percent']); ?>''> <?php echo $priorities['priority']; ?></option> <?php } ?></select></td><td><button type='button' onclick=' return deleteRow(this)' class='btn btn-danger' style='width:100%;'><i class='fa fa-trash'></i>Delete Item</button></td></tr>";
+            $("table tbody").append(markup);
+        } else {
+           //
+        }
+        
+    });
+
+});    
+</script>
     </body>
 </html>
