@@ -1,10 +1,11 @@
 <?php
+require_once "./PHP/database.php";
 session_start();
 $_SESS['loginError'] =$_SESS['emailError'] =$_SESS['passError'] = "";
 $password = $username="";
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     //user clicked submit button, implement logic
-require_once "./PHP/database.php";
+
 $username = $_POST['username'];
 $password = $_POST['password'];
 
@@ -26,11 +27,12 @@ else if(empty($password)){
 }
 else{
         
-    $sql = "SELECT * FROM users WHERE usernames='$username' OR WHERE email='$username";
+    $sql = "SELECT * FROM users WHERE usernames='$username'";
     
     $result = $conn->query($sql);
     
     $user = $result->fetch(PDO::FETCH_ASSOC);
+
     $_SESSION = $user;
 	if($username !== $user['usernames'] || !password_verify($password, $user['password'])){
         $_SESS['loginError'] = "Invalid login credentials. Please crosscheck your login details or click on the Sign Up link to create an Account";
@@ -69,7 +71,7 @@ else{
            
             <span><a href="">Forgot Password?</a></span><br>
             <button id="submit" type="submit">Sign In</button><br><br>
-            <center><span>New to Budget App? <a > Create Account</a></span></center>
+            <center><span>New to Budget App? <a href="signup.php" > Create Account</a></span></center>
         </form>
         <?php echo $_SESS['loginError']; ?>
     </div>

@@ -1,17 +1,4 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Budget App | sign in</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="techieNg.css">
-</head>
-<body>
 <?php
-session_start();
 require_once('./PHP/database.php');
 // require "database.php";
 $firstname = $username=$lastname = $emailAddress =  "";
@@ -54,9 +41,8 @@ else if ($password !== $confirmPassword){
 else{
     
 $checkUser = "SELECT * FROM users WHERE usernames = '$username' OR email='$emailAddress'";
-$checkUser2 = "SELECT * FROM users WHERE  email='$emailAddress'";
 $result = $conn->query($checkUser);
-$username = $result->fetch(PDO::FETCH_ASSOC);
+$user = $result->fetch(PDO::FETCH_ASSOC);
 if($user){
     $nameError = "Username already exists. Please choose a different username";
 }else{
@@ -79,6 +65,17 @@ if($user){
    }
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Budget App | sign in</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="techieNg.css">
+</head>
+<body>
     <div class="container">
        <p class="blue"><span>Kymo </span> Budget<br>
             <span>Sign up</span>

@@ -11,7 +11,6 @@
 <?php
 require_once "./PHP/database.php";
 echo($_SESSION['usernames']);
-
 function protect_value($value){
  $secured_value = trim(stripslashes(htmlentities($value)));     
  return $secured_value;     
@@ -80,21 +79,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         <nav>
             <div class="brandname">
-                <h2 class="header-brandname"><a href="#"> <span class="redText">Kymo</span>Budget</a></h2>
+                <h2 class="header-brandname"><a href="dashboard.php"> <span class="redText">Kymo</span>Budget</a></h2>
             </div>
-            <a href="logout.php" class="dropdown-item"> Logout</a><br>
-
+            <div class="dropdown"><?php echo $_SESSION['firstname']	; ?></div>
             <img class='user-avatar' src="icons/user.png" alt="">
             <div class="dropdown">
-			<div class="dropdown">Welcome , <?php echo $_SESSION['firstname']	; ?><span class="login"> <a href="login.php">Log Out</a> </span></div>
+			
                 <div class="dropdown-toggler" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">
                     <img src="icons/dropdown.svg" alt="">
                 </div>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="dashboard.php">Dashboard</a>
                     <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="logout.php">LogOut</a>
                 </div>
             </div>
 
@@ -108,12 +106,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             <ul class="sidebar-list">
                 <li > <i class="fas fa-home"></i> Dashboard</li>
+                <li> <i class="fas fa-plus-circle"></i> View Budget Items</li>
                 <li class="active"  ><i class="fas fa-plus-circle"></i> Add Budget Amount</li>
                 <li> <i class="fas fa-plus-circle"></i> Add Budget Items</li>
             </ul>
         </section>
 
         <section class="add-budget">
+
+        
             <form class="add-budget-form" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>' method="POST" >
                 <h2>Add Budget Amount</h2>
                 <div class="form-row margin-height">

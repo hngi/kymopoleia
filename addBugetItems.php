@@ -1,11 +1,15 @@
 <?php
 	ob_start();
     session_start();
-    echo($_SESSION['Budget_id']);
+    
     require_once "./PHP/database.php";
     if(!isset($_SESSION['email'])){
          header("Location: login.php");
+    // }
+    // else if (!isset($_SESSION['Budget_id'])){
+    //     header("Location: budgetdashboard.php");
     }else{
+        echo($_SESSION['Budget_id']);
         $sql = "SELECT * FROM Priority ";
         $result = $conn->query($sql);
         $res = $conn->query($sql);
@@ -57,9 +61,9 @@
 
         <nav>
             <div class="brandname">
-                <h2 class="header-brandname"><a href="#"> <span class="redText">Kymo</span> Budget</a></h2>
+                <h2 class="header-brandname"><a href="dashboard.php"> <span class="redText">Kymo</span> Budget</a></h2>
             </div>
-            <a href="logout.php" class="dropdown-item"> Logout</a><br>
+            <div class="dropdown"><?php echo $_SESSION['firstname']	; ?></div>
 
             <img class='user-avatar' src="images/user.png" alt="">
             <div class="dropdown">
@@ -67,11 +71,12 @@
                       <img src="images/drop.png" alt="">
                     </div>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="dashboard.php">Dashboard</a>
                       <a class="dropdown-item" href="#">Another action</a>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <a class="dropdown-item" href="logout.php">Log Out</a>
                     </div>
-                  </div>
+            </div>
+            <a class="dropdown-item" href="logout.php">Log Out</a>
 
         </nav>
 
@@ -83,6 +88,7 @@
 
             <ul class="sidebar-list">
                 <li><i class="fas fa-home"></i> Dashboard</li>
+                <li> <i class="fas fa-plus-circle"></i> View Budget Items</li>
                 <li><i class="fas fa-plus-circle"></i> Add Budget Items</li>
                 <li class="active"> <i class="fas fa-plus-circle"></i> Add Items</li>
             </ul>
@@ -90,66 +96,80 @@
 
         <section class="add-budget">
                 <form class="add-budget-form" action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>' method="POST">
-                <label for="reference" class="control-label">Budget Title<span class="required">*</span></label>
-                <h2><?php echo ($_SESSION['Budget_id']);?></h2><br>
-
+                    <h2><?php echo ($_SESSION['Budget_id']);?></h2><br>
                     <h4>Add Budget Item</h4>
                     <label for="reference" class="control-label">Select Items<span class="required">*</span></label>
-                         <!-- <div class="col-md-12"> -->
-                            <div class="col-md-3">
-                                <input type="checkbox" name="checkbox" id="checkbox" description="income tax" value="tax"> <b>Tax<b>
-                            </div> <div class="col-md-3">
-                                <input type="checkbox" name="checkbox" id="checkbox" value="Insurance"> <b>Insurance<b>
-                            </div>
-                            
-                            <div class="col-md-3">
-                                <input type="checkbox" name="checkbox" id="checkbox" value="Shopping"> <b>Shopping<b>
-                            </div>
-                            <div class="col-md-3">
-                                <input type="checkbox" name="checkbox" id="checkbox"value="Health"> <b>Health<b>
-                            </div>
-                        <!-- </div>  
-                         <div class="col-md-12"> -->
-                            <div class="col-md-3">
-                                <input type="checkbox" name="checkbox" id="checkbox" value="Investments"> <b>Investments<b>
-                            </div>
-                            <div class="col-md-3">
-                                <input type="checkbox" name="checkbox" id="checkbox" value="Rent"> <b>Rent<b>
-                            </div>
-                            <div class="col-md-3">
-                                <input type="checkbox" name="checkbox" id="checkbox" value="Baby"> <b>Baby<b>
-                            </div>
-                            <div class="col-md-3">
-                                <input type="checkbox" name="checkbox" id="checkbox" value="pet" on> <b>pet<b>
-                            </div>
-                        <!-- </div>        -->
-                        <div class="form-row margin-height">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <label for="reference" class="control-label">Add Your Items<span class="required">*</span></label>
-                                <div class="table-responsive">
-                            
-                                    <table class="table table-stripped table-bordered" id="invoice">
-                                        <thead>
-                                            <th>Item <span class="required">*</span></th>
-                                            <th>Description </th>
-                                            <th>Priority <span class="required">*</span></th>
-                                            <th>Action </th>
-                                        </thead>
-                                        <tbody>
-                                            
-                                        </tbody>
-                                    </table>
-                                </div>    
-                            </div> 
-                            <div class="col-md-12">
-                                <button type="button" class="btn btn-success" id="add-row"><i class="fa fa-plus"></i> Add
-                                    Item</button>
-                            </div>
+                    <div class="form-row margin-height">
+                        <div class="col-md-6">
+                            <input type="checkbox" name="checkbox" id="checkbox" description="income tax" value="tax"> <b>Tax<b>
+                        </div> 
+                        <div class="col-md-6">
+                            <input type="checkbox" name="checkbox" id="checkbox" value="Insurance"> <b>Insurance<b>
                         </div>
+                    </div>   
+                    <div class="form-row margin-height"> 
+                        <div class="col-md-6">
+                            <input type="checkbox" name="checkbox" id="checkbox"value="Health"> <b>Health<b>
                         </div>
-                        <button type="submit" class="btn budget-save text-center">Save</button>
-                      </form>
+                    
+                        <div class="col-md-6">
+                            <input type="checkbox" name="checkbox" id="checkbox" value="Investments"> <b>Investments<b>
+                        </div>
+                    </div>   
+                    <div class="form-row margin-height"> 
+                        <div class="col-md-6">
+                            <input type="checkbox" name="checkbox" id="checkbox" value="Shopping"> <b>Shopping<b>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="checkbox" name="checkbox" id="checkbox"value="Health"> <b>Health<b>
+                        </div>
+                    </div>
+                    <div class="form-row margin-height">
+                        <div class="col-md-6">
+                            <input type="checkbox" name="checkbox" id="checkbox" value="Investments"> <b>Investments<b>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="checkbox" name="checkbox" id="checkbox" value="Rent"> <b>Rent<b>
+                        </div>
+                    </div> 
+                    <div class="form-row margin-height">   
+                        <div class="col-md-6">
+                            <input type="checkbox" name="checkbox" id="checkbox" value="Baby"> <b>Baby<b>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="checkbox" name="checkbox" id="checkbox" value="pet" on> <b>pet<b>
+                        </div>
+                    </div>       
+                    <div class="form-row margin-height">
+                    
+                        <div class="col-md-12">
+                            <label for="reference" class="control-label">Add Your Items<span class="required">*</span></label>
+                            <div class="table-responsive">
+                        
+                                <table class="table table-stripped table-bordered" id="invoice">
+                                    <thead>
+                                        <th>Item <span class="required">*</span></th>
+                                        <th>Description </th>
+                                        <th>Priority <span class="required">*</span></th>
+                                        <th>Action </th>
+                                    </thead>
+                                    <tbody>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>    
+                        </div> <br>
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-success" id="add-row"><i class="fa fa-plus"></i> Add
+                                Item</button>
+                        </div>
+                        <div class="col-md-3"> </div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn budget-save text-center">Save</button>
+                        </div>
+                    </div>
+                    
+                </form>
 
         </section>
 
