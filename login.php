@@ -26,7 +26,7 @@ else if(empty($password)){
 }
 else{
         
-    $sql = "SELECT * FROM users WHERE usernames='$username'";
+    $sql = "SELECT * FROM users WHERE usernames='$username' OR WHERE email='$username";
     
     $result = $conn->query($sql);
     

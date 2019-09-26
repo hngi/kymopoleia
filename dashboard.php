@@ -1,9 +1,19 @@
 <?php
 	ob_start();
     session_start();
+    require_once "./PHP/database.php";
     if(!isset($_SESSION['email'])){
          header("Location: login.php");
+    }else{
+        // echo($_SESSION['usernames']);
+        $sql = "SELECT * FROM budget WHERE username = '{$_SESSION['usernames']}' ";
+        $result = $conn->query($sql);
+        $Budgets= $result->fetch(PDO::FETCH_ASSOC);
+       
     }
+
+        
+            
     
     
 ?>
@@ -59,26 +69,34 @@
                 <div class="top">
                     <div class="budget">
                         <div class="budget__title">
-                            Available Budget in <span class="budget__title--month">%Month%</span>:
+                            Available Budgets in <span class="budget__title--month">%Month%</span>:
                         </div>
                         
-                        <div class="budget__value">+ 2,345.64</div>
-                        
-                        <div class="budget__income clearfix">
-                            <div class="budget__income--text">Income</div>
-                            <div class="right">
-                                <div class="budget__income--value">+ 4,300.00</div>
-                                <div class="budget__income--percentage">&nbsp;</div>
-                            </div>
-                        </div>
-                        
-                        <div class="budget__expenses clearfix">
-                            <div class="budget__expenses--text">Expenses</div>
-                            <div class="right clearfix">
-                                <div class="budget__expenses--value">- 1,954.36</div>
-                                <div class="budget__expenses--percentage">45%</div>
-                            </div>
-                        </div>
+                      
+                            
+                            <table class="table table-stripped table-bordered" id="invoice">
+                                <thead>
+                                    <th>Budgets <span class="required">*</span></th>
+                                    <th>Date Added </th>
+                                    <th>Time Due <span class="required">*</span></th>
+                                    <th>Number of Items </th>
+                                </thead>
+                                <tbody>
+                                    <?php do{?>
+                                        <tr>
+                                            <td><?php echo($Budgets['Budget_id']);?></td>
+                                            <td><?php echo($Budgets['startTime']);?></td>
+                                            <td><?php echo($Budgets['endTime']);?></td>
+                                            <td><?php   $sq = "SELECT * FROM BudgetDetails WHERE Budget_id = '{$Budgets['Budget_id']}' ";
+                                                    $res = $conn->query($sq);
+                                                    $Budg =   $res->rowCount();
+                                                
+                                                        echo($Budg);?></td>
+                                        </tr>    
+                                    <?php }while($Budgets =$result->fetch(PDO::FETCH_ASSOC))?>
+                                </tbody>
+                            </table>
+                            
                     </div>
                 </div>
                 

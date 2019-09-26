@@ -127,10 +127,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
-                        <input type="text"  id="startTime" name="startTime" class="form-control" placeholder="Enter start time">
+                        <input type="text"  id="startTime" name="startTime" class="form-control" placeholder="Enter start time(dd/m/yy)">
                     </div>
                     <div class="form-group col-md-6">
-                        <input type="text" name="endTime" id="endTime" class="form-control" placeholder="Enter end time">
+                        <input type="text" name="endTime" id="endTime" class="form-control" placeholder="Enter end time(dd/m/yy)">
                     </div>
 
                 </div>
