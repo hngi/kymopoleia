@@ -1,63 +1,41 @@
-<?php include 'functions.php' ?>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> Budgit | Signup</title>
-    <link rel = "icon" href = "images\logo2.png" type = "image/png">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Lobster|Lobster+Two&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-    <div class="container">
-        <div class="main">
-            <header>
-                <div id="logo-div">
-                    <img src="images/logo.png" id="logo" alt=""> <span id="logo-text">BudgIt</span> 
-                    <p>Making managing your finances hassle free</p>
-                </div>
-                <div id="nav-div" class="nav-div">
-                    <p> <a href="index.html" > Home</a>
-                        <a href=""> About</a>
-                        <a href="login.html" id="login"> Login</a>
-                        <a href="signup.html" id="signup" class="active"> Signup</a>
-                        <a href=""> Contact</a>
-                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                                <img src="img/mdi_menu.png" alt="">
-                              </a>
-                    </p>
-                </div>
-            </header>
-            <div class="content">
-            
-                <h1>Signup </h1>
-                <p>It only takes a minute</p>
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylenel.css">
+    <title>Budget App</title>
+  </head>
+  <body>
+      <form>
+    <div class= "signinbox">
+      <h1> <span style= "color:#FD4720">Kymo </span> <span style="color:#040268"> Budget </span>  </h1>
+      <h2> Sign up</h2>
+      <p> Username </p>
+      <input type= "text" name="">
+      <p>Email</p>
+      <input type="email" name="">
+      <p>Password</p>
+      <input type="password" name="">
+      
+      <input type="submit" name="" value="Create Account">
+      <h4><span style= "color: #FD4720">Already have an account?</span> <a href="login.html"> <span style= "color: #040268"> Sign in</span> </a><h4>
+      </form>
 
-                <form id="form" action="signUp.php" method="POST">
-                    <input type="text" id="username" name="username"  placeholder="Lastname first" required><span id="Evalid"></span><br><br>
-                    
-                    <input type="email" id="email" name="email"  placeholder="email" required><span id="Evalid"></span><br><br>
-                   
-                    <input type="password" name="password" id="password" placeholder="password" required style="width: 230px"><i class="fa fa-eye" id="view"></i><br><br>
-                   
-                    <input type="password" name="password2" id="password2" placeholder="Confirm password" required onkeyup='checkPassword();'>
-                    <span id="message"></span><br><br>
-                    
-                    <button id="submit" type="submit" disabled>Sign Up</button><br>
-                    <span>By clicking the Sign Up button, you agree to our</span><br>
-                    <span><a href="">Terms & Conditions</a> and <a href=""> Privacy Policy</a></span>
-                </form>
-            
-            </div>
-            <div class="clear"></div>
-            <footer>
-                <b>&copy;Copyright 2019 Kymopoleia</b>
-            </footer>
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+
+    
+ 
+           
+       
+       
+   
+    
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
