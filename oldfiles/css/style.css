@@ -1,0 +1,27 @@
+body {
+    background-color: whitesmoke;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.nav {
+    margin: 0;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: inline-flex;
+}
+
+.nav h2 {
+    padding: 6px;
+}
+
+
+.heading {
+    color: orange;
+}
+
+.heading b {
+    color: darkblue;
+}

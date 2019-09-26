@@ -1,0 +1,310 @@
+body{
+    margin:0;
+    font-family: 'Roboto', sans-serif;
+    background: url('img/budget.png') no-repeat;
+    background-size: cover;
+}
+body a:hover{
+    color: black;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(253, 71, 32, 0.9);
+
+}
+.main{
+    width: 80%;
+    margin: 0 auto;
+    /* background-color: gray; */
+    height: 100vh;
+}
+#logo-div{
+    float: left;
+}
+#logo-div p{
+    font-style: italic;
+    font-size: 14px;
+    color: #040268;
+    font-weight: bold;
+    margin-top: -3px;
+}
+#logo-text{
+    /* margin-top: -10px; */
+    font-weight: bold;
+    font-size: 50px;
+    color: #040268;
+}
+#logo-text a{
+    text-decoration: none;
+    color: #040268;
+}
+.nav-div{
+    float: right;
+
+    word-spacing: 10px;
+    font-size: 20px;
+    padding-right: 10px;
+
+}
+.nav-div .icon {
+    display: none;
+  }
+header{
+    overflow: hidden;
+}
+
+.content-fields{
+    float: left;
+
+}
+.content-fields label{
+    color: white
+
+}
+.content{
+    text-align: center;
+    color: white;
+    height: 68vh;
+
+}
+.content p{
+    margin-top: -10px;
+}
+.center{
+    margin-top: 100px;
+}
+.center a{
+    padding: 20px;
+    background-color: #040268;
+    line-height: 80px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bolder;
+    border-radius: 10px;
+}
+.content-fields h2{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 45px;
+    color: #040268;
+    font-weight: normal;
+}
+.content-fields p{
+    margin-top: -30px;
+    font-size: 30px;
+}
+.content-fields a{
+    color: red;
+    font-style: italic;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#form input{
+    padding: 10px 10px;
+    width: 250px;
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 5px;
+    outline:none;
+    margin-bottom: 10px;
+}
+#view{
+    background-color: #040268;
+    padding: 8px 2px 12px 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+#password{
+    padding: 10px 10px;
+    width: 150px;
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 5px;
+    outline:none;
+    margin-bottom: 10px;
+}
+#submit{
+    background:#040268;
+    color: #fff;
+    height: 47px;
+    font-weight: bold;
+    font-size: 24px;
+    border-radius: 5px;
+    border: none !important;
+    width: 270px !important;
+    }
+
+footer{
+    width: 100%;
+    text-align: center;
+    position: relative;
+    /* top: 15vh; */
+    color: white;
+}
+.clear{
+    clear: both;
+}
+/* Mobile Styles */
+@media only screen and (max-width: 400px) {
+    #logo-div{
+        float: left;
+        margin-top: 20px;
+        overflow: hidden;
+    }
+    #logo-div p{
+        font-style: italic;
+        font-size: 8px;
+        color: #040268;
+        font-weight: bold;
+        margin-top: -3px;
+    }
+    #logo-text{
+        font-size: 40px;
+        text-align: center;
+    }
+    .nav-div.responsive {position:fixed; right: 0; padding-top: 20px;}
+    .nav-div.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .nav-div a.icon {
+        float: right;
+        display: block;
+        position: fixed;
+      }
+    .nav-div.responsive a {
+      float: none;
+      display: block;
+      padding-top: 20px;
+      text-align: left;
+    }
+    .nav-div a{display: none;}
+
+    .content{
+        text-align: center;
+        align-content: center;
+        color: white;
+        height: 78.6vh;
+    }
+    .content a{
+        text-decoration: none;
+        color: red;
+    }
+    .center #link{
+        color: white;
+    }
+
+    .center{
+        text-align: center;
+        align-content: center;
+        color: white;
+        height: 65vh;
+        margin-top: 100px;
+    }
+    .content-fields h2{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: #040268;
+    font-weight: bold;
+    }
+    .content-fields p{
+        margin-top: -20px;
+        font-size: 25px;
+    }
+
+  }
+
+  /* Tablet Styles */
+
+  @media only screen and (min-width: 401px) and (max-width: 960px) {
+    body{
+        background: url('img/budget.png') no-repeat;
+        background-size: cover;
+    }
+    #logo-div{
+        float: left;
+        margin-top: 20px;
+        overflow: hidden;
+    }
+    #logo-div p{
+        font-style: italic;
+        font-size: 10px;
+        color: #040268;
+        font-weight: bold;
+        margin-top: -2px;
+    }
+    
+
+    .content{
+        text-align: center;
+        align-content: center;
+        color: white;
+        height: 77.8vh;
+    }
+    .content a{
+        text-decoration: none;
+        color: red;
+    }
+    .center #link{
+        color: white;
+    }
+
+    .center{
+        text-align: center;
+        align-content: center;
+        color: white;
+        height: 65vh;
+        margin-top: 100px;
+    }
+    .content-fields h2{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    color: #040268;
+    font-weight: bold;
+    }
+    .content-fields p{
+        margin-top: -20px;
+        font-size: 25px;
+    }
+
+  }
+  @media only screen and (min-width:961px) and (max-width: 1600px){
+    .content-fields h2{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    color: #040268;
+    }
+    .content{
+        text-align: center;
+        align-content: center;
+        color: white;
+        height: 79vh;
+    }
+    .content a{
+        text-decoration: none;
+        color: red;
+    }
+    .center #link{
+        color: white;
+    }
+
+    .center{
+        text-align: center;
+        align-content: center;
+        color: white;
+        height: 65vh;
+        margin-top: 100px;
+    }
+    .content-fields p{
+        margin-top: -20px;
+        font-size: 25px;
+    }
+
+  }

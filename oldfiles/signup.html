@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Budget App | sign up</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="techieNg.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+        <div class="container">
+                <div class="main">
+                    <header>
+                        <div id="logo-div">
+                            <span id="logo-text"><a href="landingPage/landing.html">Kymo Budget</a></span> 
+                            <p>Making managing your finances hassle free</p>
+                        </div>
+                        
+                    </header>
+                    <div class="content">
+                        <h1>Sign Up</h1>
+                        <p>It only takes a minute</p>
+        
+                        
+                        <form id="form" action="" method="POST">
+                                
+                                <input type="text" id="username" name="username"  placeholder="Lastname first" required><br><br>
+                                
+                                <input type="email" id="email" name="email"  placeholder="email" required><br><br>
+                                
+                                <input type="password" name="password" id="password" placeholder="password" required style="width: 230px"><i class="fa fa-eye" id="view"></i><br><br>
+                                
+                                <input type="password" name="password2" id="password2" placeholder="confirm password" required onkeyup='checkPassword();'><br><span id="message"></span> <br>
+                               
+                                <button id="submit" type="submit" disabled>Sign Up</button><br>
+                                <span>By clicking the Sign Up button, you agree to our</span>
+                                <span><a href="">Terms & Conditions</a> and <a href=""> Privacy Policy</a></span><br><br><span>Already have an account? Login <a href="login.html">here</a></span>
+                            </form>
+
+            
+        
+        
+                    </div>
+                    <div class="clear"></div>
+                    <footer>
+                        <b>&copy;Copyright 2019 kymopoleia</b>
+                    </footer>
+                </div>
+            </div>
+            <script src="script.js"></script>
+</body>
+</html>
