@@ -85,7 +85,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     <nav>
             <div class="brandname">
-                <h2 class="header-brandname"><a href="..index.php"><img src="images/kymo.png" alt=""> </a></h2>
+                <h2 class="header-brandname"><a href="index.php"><img src="images/kymo.png" alt=""> </a></h2>
             </div>
             <p class="welcome_user">Hi, <span class="blueText"><?php echo $_SESSION['firstname']    ;  echo $_SESSION['lastname']   ; ?></span></p>
             <img class='user-avatar' src="images/user.png" alt="">
@@ -106,16 +106,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <main>
 
 
-        <section class="sidebar">
-        
-
-            <ul class="sidebar-list">
-                <li><i class="fas fa-home"></i> Dashboard</li>
-                <li > <i class="fas fa-plus-circle"></i> View Budget Items</li>
-                <li class="active"><i class="fas fa-plus-circle"></i> Add Budget</li>
-                <li><i class="fas fa-plus-circle"></i>  Add Budget Items</li>
-            </ul>
-        </section>
+    <section class="sidebar">    
+        <ul class="sidebar-list">
+            <li><a href="dashboard.php"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="view-budget.php"><i class="fas fa-plus-circle"></i> View Budget Items</a></li>
+            <li class="active"><a href="#"><i class="fas fa-plus-circle"></i> Add Budget</a></li>
+            <li><a href="addBudgetItems.php"><i class="fas fa-plus-circle"></i>  Add Budget Items</a></li>
+        </ul>
+    </section>
 
         <section class="add-budget">
         <div style="height: 100px"></div>

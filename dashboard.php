@@ -32,7 +32,7 @@
 
         <nav>
             <div class="brandname">
-                <h2 class="header-brandname"><a href="..index.php"><img src="images/kymo.png" alt=""> </a></h2>
+                <h2 class="header-brandname"><a href="index.php"><img src="images/kymo.png" alt=""> </a></h2>
             </div>
             <p class="welcome_user">Hi, <span class="blueText"><?php echo $_SESSION['firstname']    ;  echo $_SESSION['lastname']   ; ?></span></p>
             <img class='user-avatar' src="images/user.png" alt="">
@@ -52,15 +52,14 @@
 
     <main>
 
-        <section class="sidebar">
-
-            <ul class="sidebar-list">
-                <li > <i class="fa fa-home"></i><a href="#" class="active"> Dashboard</a></li>
-                <li> <i class="fas fa-plus-circle"></i> View Budget Items</li>
-                <li><a href="addBudget.php"><i class="fa fa-plus-circle"></i><a href="addBudget.php"> Add Budget </a></li>
-                <li><a href="#"><i class="fa fa-plus-circle"></i> Add Expenses</a></li>
-            </ul>
-        </section>
+    <section class="sidebar">    
+        <ul class="sidebar-list">
+            <li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="view-budget.php"><i class="fas fa-plus-circle"></i> View Budget Items</a></li>
+            <li class=""><a href="addBudget.php"><i class="fas fa-plus-circle"></i> Add Budget</a></li>
+            <li><a href="addBudgetItems.php"><i class="fas fa-plus-circle"></i>  Add Budget Items</a></li>
+        </ul>
+    </section>
 
 
 

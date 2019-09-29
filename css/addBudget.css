@@ -69,7 +69,7 @@ main {
     background: #1032DE;
     min-height: 100vh;
     color: #fff;
-    z-index: -1;
+    z-index: 1;
     padding: 3em;
 }
 
