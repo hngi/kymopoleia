@@ -33,7 +33,6 @@ if (count($_POST) > 0) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!<link rel="stylesheet" type="text/css" href="styles.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -41,11 +40,12 @@ if (count($_POST) > 0) {
     <link rel="stylesheet" href="./css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/sidebar.css">
     <script src="https://kit.fontawesome.com/833e0cadb7.js" crossorigin="anonymous"></script>
     <link href="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.css" rel="stylesheet">
     
 
-    <title>Kymo Budget | Change Password</title>
+    <title>Kymo Budget | Change Password </title>
 </head>
 <body class="">
     <header>
@@ -73,15 +73,11 @@ if (count($_POST) > 0) {
 
     <main>
 
-        <section class="sidebar">
+       
 
-            <ul class="sidebar-list">
-                <li > <i class="fa fa-home"></i><a href="#" class="active"> Dashboard</a></li>
-                <li> <i class="fas fa-plus-circle"></i> View Budget Items</li>
-                <li><a href="addBudget.php"><i class="fa fa-plus-circle"></i><a href="addBudget.php"> Add Budget </a></li>
-                <li><a href="#"><i class="fa fa-plus-circle"></i> Add Expenses</a></li>
-            </ul>
-        </section>
+        <?php include "./PHP/sidebar.php"; ?>
+       
+
 		<section class="buget__dashboard">
             <div class="container">
 
