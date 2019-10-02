@@ -33,7 +33,7 @@ if (count($_POST) > 0) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" type="text/css" href="styles.css" />
+<!<link rel="stylesheet" type="text/css" href="styles.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -128,6 +128,50 @@ if(newPassword.value != confirmPassword.value) {
 return output;
 }
 </script>
+<style type="text/css">
+body {
+font-family:Arial;
+}
+input {
+font-family:Arial;
+font-size:14px;
+}
+label{
+font-family:Arial;
+font-size:14px;
+color:black;
+}
+.tblSaveForm {
+border-top:2px #999999 solid;
+background-color: #f8f8f8;
+}
+.tableheader {
+background-color: gray;
+}
+.btnSubmit {
+background-color:blue;
+padding:5px;
+border-color:blue;
+border-radius:4px;
+color:white;
+}
+.message {
+color: #FF0000;
+text-align: center;
+width: 100%;
+}
+.txtField {
+padding: 5px;
+border:blue 1px solid;
+border-radius:4px;
+}
+.required {
+color: #FF0000;
+font-size:11px;
+font-weight:italic;
+padding-left:10px;
+}
+</style>
 </head>
 <body>
     <form name="frmChange" method="post" action=""
