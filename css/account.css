@@ -1,0 +1,132 @@
+ body {
+     font-family: 'Rubik', sans-serif;
+ }
+ 
+ .top-ellipse {
+     position: absolute;
+     top: 0;
+     right: 0;
+     width: 350px;
+ }
+ 
+ .div-wrapper {
+     width: 100%;
+     position: absolute;
+     bottom: 0;
+ }
+ 
+ .div-wrapper img {
+     position: relative;
+     display: block;
+     float: left;
+     width: 350px;
+ }
+ 
+ .login-section {
+     margin: 0;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     -ms-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+ }
+ 
+ form {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+ }
+ 
+ .forgot__pass__link {
+     padding-right: 200px;
+     margin-bottom: -15px;
+ }
+ 
+ .form-control {
+     border: 1px solid rgba(0, 0, 0, 0.15);
+     border-radius: 0;
+     height: 50px;
+     margin-bottom: 10px;
+     padding: 25px;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 14px;
+     line-height: 17px;
+     color: rgba(0, 0, 0, 0.56);
+ }
+ 
+ .spacing {
+     margin-top: 250px;
+ }
+ 
+ .login-btn {
+     border-radius: 0;
+     background: #2B4CF2;
+     width: 31%;
+     font-weight: bold;
+ }
+ 
+ .bottom-ellipse {
+     /* background: rgba(33, 89, 168, 0.05); */
+     transform: rotate(-162.89deg);
+     width: 668px;
+     top: 300px;
+     position: fixed;
+     left: -55px;
+ }
+ 
+ input {
+     padding: 25px;
+     font-style: normal;
+     font-weight: normal;
+     font-size: 14px;
+     line-height: 17px;
+     color: rgba(0, 0, 0, 0.56);
+     margin-bottom: 300px;
+ }
+ 
+ #top-logo {
+     position: fixed;
+     width: 233.02px;
+     height: 40px;
+     left: 44px;
+     top: 44px;
+ }
+ 
+ .form-align {}
+ 
+ .signUP {
+     font-style: normal;
+     font-weight: 500;
+     font-size: 25px;
+     line-height: 30px;
+ }
+ 
+ .welcome {
+     padding-bottom: 2em;
+ }
+ 
+ .Already-acc {
+     margin-top: 1em;
+     font-size: 18px;
+     line-height: 21px;
+     font-style: normal;
+     font-weight: normal;
+ }
+ 
+ .Already-acc a {
+     text-decoration: none;
+ }
+ 
+ .Already-acc span {
+     color: #2B4CF2;
+ }
+ 
+ .Already-acc span:hover {
+     color: #2B4CF2;
+     text-decoration: underline;
+ }
+ 
+ .container {
+     margin-bottom: 5em;
+ }

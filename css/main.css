@@ -1,0 +1,41 @@
+.side-menu{
+	width:240px;
+	background: #fff;
+	border-right:1px solid #cfcfcf;
+}
+.side-menu ul{
+	margin-right: -15px;
+	margin-left: -15px;
+	z-index: 0;
+}
+.side-menu ul li{
+	display: block;
+}	
+
+.side-menu ul li a{
+	font-size: 15px;
+	font-weight: 600px;
+	color: #fff;
+}
+
+.side-menu ul li a i{
+	margin-left: 8px;
+	margin-right: 8px;
+}
+@media(max-width: 766px){
+	.side-menu{
+		position: fixed;
+		z-index: 1000;
+	}
+}
+.third{
+	color: #1032DE;
+	font-weight: bold;
+}
+table th{
+	color:white;
+}
+.btn-infos{
+	background-color: #1032DE;
+	color: #fff;
+}
