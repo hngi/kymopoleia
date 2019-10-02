@@ -66,7 +66,7 @@
     <script src="https://kit.fontawesome.com/833e0cadb7.js" crossorigin="anonymous"></script>
     <link href="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.css" rel="stylesheet">
 
-
+  <link rel="manifest" href="manifest.json">
     <title>Kymo Budget | Add Budget </title>
 </head>
 
@@ -213,6 +213,7 @@
     <script src="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.15.4/dist/extensions/mobile/bootstrap-table-mobile.min.js">
     </script>
+    <script src="js/app.js"></script>
     <script >
     var i = <?php echo $i;?>;
     function deleteRow(r) {
