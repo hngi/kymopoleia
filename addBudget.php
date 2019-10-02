@@ -75,7 +75,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="css/addBudget.css">
     <script src="https://kit.fontawesome.com/833e0cadb7.js" crossorigin="anonymous"></script>
     <link href="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.css" rel="stylesheet">
-
+  <link rel="manifest" href="manifest.json">
 
     <title>Kymo Budget | Add Budget </title>
 </head>
@@ -160,6 +160,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <script src="https://unpkg.com/bootstrap-table@1.15.4/dist/bootstrap-table.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table@1.15.4/dist/extensions/mobile/bootstrap-table-mobile.min.js">
     </script>
+    <script src="js/app.js"></script>
 
 </body>
 
