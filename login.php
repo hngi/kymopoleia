@@ -1,4 +1,9 @@
 <?php
+
+require_once "config.php";
+
+$loginURL = $gClient->createAuthUrl();
+
 require_once "./PHP/database.php";
 session_start();
 $_SESS['loginError'] =$_SESS['emailError'] =$_SESS['passError'] = "";
@@ -86,6 +91,7 @@ else{
             </div>
             <br>
             <button type="submit" class="btn btn-primary login-btn">Login</button>
+            <button type="button" onclick = "window.location = '<?php echo $loginURL ?>';" class="btn btn-primary login-btn">Login with Google</button>
 
             <p class="Already-acc">New to Kymo Budget?&nbsp;&nbsp;<span><a href="signup.php"> Sign Up</span></a></p>
 
